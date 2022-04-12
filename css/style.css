@@ -2,11 +2,6 @@ th{
     padding: 0.8em;
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-}
-
 #listaProdotti img{
     width: 100px;
 }
