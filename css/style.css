@@ -1,0 +1,43 @@
+th{
+    padding: 0.8em;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#listaProdotti img{
+    width: 100px;
+}
+
+#listaProdotti tr{
+    border-bottom: 1px solid #999;
+    border-top: 1px solid #999;
+}
+
+.card{
+    height: 380px;
+    width: 500px;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.carta{
+    margin: 10px;
+}
+
+.carta img{
+    width: 150px;
+    margin: 0 auto;
+}
+
+.quant{
+    width: 15%;
+    margin-right: 3px;
+    border-radius: 3px;
+}
+
+#listaCarrello img{
+    width: 150px;
+}
