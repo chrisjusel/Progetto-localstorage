@@ -82,7 +82,12 @@ function rimuoviProdotto(index){
     stampaProdotti();
 }
 
-
-
+function countQuantity(cart){
+    let count = 0;
+    for(let i=0; i<cart.length; i++){
+        count += +(cart[i].quantita);
+    }
+    return count;
+}
 
 

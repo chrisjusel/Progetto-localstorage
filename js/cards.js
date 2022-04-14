@@ -4,18 +4,11 @@ let cart = localStorage.getItem('carrello');
 const listaProdotti = document.getElementById('griglia');
 let carrello = [];
 
-function aggiungiProdotti(){
-        if(storage != null){
-            products = JSON.parse(storage);
-        }
-        if(cart != null){
-            carrello = JSON.parse(cart);
-        }
-}
 aggiungiProdotti();
 
 document.addEventListener('DOMContentLoaded', () => {
     creaCard();
+    document.getElementById("cart").innerHTML = countQuantity(carrello);
 });
 console.log(products.length);
 
@@ -44,7 +37,15 @@ function creaCard(){
         alert("Non ci sono articoli in vendita");
     }
 }
-console.log(carrello);
+
+function aggiungiProdotti(){
+    if(storage != null){
+        products = JSON.parse(storage);
+    }
+    if(cart != null){
+        carrello = JSON.parse(cart);
+    }
+}
 
 function aggiungiAlCarrello(index){
     let quantity = document.getElementById(index).value;
@@ -52,7 +53,17 @@ function aggiungiAlCarrello(index){
         products[index].quantita = quantity;
         carrello.push(products[index]);
         localStorage.setItem('carrello', JSON.stringify(carrello));
+        document.getElementById(index).value = "";
+        document.getElementById("cart").innerHTML = countQuantity(carrello);
+        console.log(countQuantity(carrello));
     }
     else alert("il campo quantità non può essere vuoto");
 }
 
+function countQuantity(cart){
+    let count = 0;
+    for(let i=0; i<cart.length; i++){
+        count += +(cart[i].quantita);
+    }
+    return count;
+}

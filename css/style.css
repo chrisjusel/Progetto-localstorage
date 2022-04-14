@@ -36,3 +36,11 @@ th{
 #listaCarrello img{
     width: 150px;
 }
+
+#tot{
+    font-weight: bold;
+}
+
+#listaCarrello tr{
+    padding-bottom: 2em;
+}
